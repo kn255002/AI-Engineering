@@ -1,0 +1,51 @@
+git --version
+##git version 2.29.2.windows.3
+
+git branch -v
+git branch -v
+git checkout master
+
+
+##Copy following 3-Lines from GitHub Web.
+
+git config --global user.name "kn255002"
+git config --global user.email "khurram.deutsch@yahoo.com"
+git config --list
+#git config --global http.sslverify false
+git config --global --replace http.sslverify false
+
+git add --help
+
+$ mkdir AI-Engineering
+####git init C:/path/AI-Engineering/	###	Assume repo doesn't exist over web and you want to tract/push to web.	
+####rm -rf .git ### This will stop synch loca with your web repo.
+$ cd AI-Engineering/
+##You are in working area
+
+$ mkdir semester-1
+$ mkdir semester-2
+
+# create file in /Documents/GitHub/AI-Engineering/semester-2/
+ touch afile.txt
+ 
+##You are in Staging Area
+#git add .					##Include everything in this dir/place
+git add --all				##Include everything
+git add thisfileonly.txt	##Include single file
+git reset thisfileonly.txt	##Exclude this single file
+git commit -m "Files are uploading to git-web."	##Commit staging, you get hashnumber
+git log					##hashnumber generated: 9975b2e2b59d0d07cefeb60a9f277e485dd439d8 (HEAD -> main)
+##You were in Staging Area
+git remote -v
+
+
+
+##Copy following 3-Lines from GitHub Web.
+git remote add origin https://github.com/kn255002/AI-Engineering.git
+git branch -M main
+
+#git push -u origin main
+git push -u origin --all
+
+git status
+###############
