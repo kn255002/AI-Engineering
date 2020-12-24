@@ -40,8 +40,6 @@ git log					##hashnumber generated: 9975b2e2b59d0d07cefeb60a9f277e485dd439d8 (HE
 ##You were in Staging Area
 git remote -v				##It tells about online/web path
 
-
-
 ###Now you shift Staging to repository.
 ###You may copy following 2-Lines from GitHub Web.
 git remote add origin https://github.com/kn255002/AI-Engineering.git
@@ -53,3 +51,11 @@ git branch -M main
 
 git status
 ###############
+###################Copy remote/Web Repository on your Disk Local-FS.###############
+mkdir AI-Engineering
+cd AI-Engineering
+##Now in this directory download/clone web repository.
+#git clone webpath /localFS    
+git clone https://github.com/kn255002/AI-Engineering . 
+
+  
