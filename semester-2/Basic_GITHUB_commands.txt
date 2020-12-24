@@ -6,7 +6,7 @@ git branch -v
 git checkout master
 
 
-##The below 2 lines tells who is modifying code/checkin/checkou
+##The below 2 lines tells who is modifying code/checkin/checkout
 git config --global user.name "kn255002"
 git config --global user.email "khurram.deutsch@yahoo.com"
 #git config --global http.sslverify false
