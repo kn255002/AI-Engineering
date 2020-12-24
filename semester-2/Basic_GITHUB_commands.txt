@@ -2,7 +2,7 @@ git --version
 ##git version 2.29.2.windows.3
 
 git branch -v
-git branch -v
+
 git checkout master
 
 
@@ -36,7 +36,7 @@ git reset thisfileonly.txt	##Exclude this single file
 git commit -m "Files are uploading to git-web."	##Commit staging, you get hashnumber
 git log					##hashnumber generated: 9975b2e2b59d0d07cefeb60a9f277e485dd439d8 (HEAD -> main)
 ##You were in Staging Area
-git remote -v
+git remote -v				##It tells about online/web path
 
 
 
