@@ -1,10 +1,9 @@
+
 git --version
 ##	git version 2.29.2.windows.3
 
-git branch -v
-
-git checkout master
-
+##	Asking help on git command.
+git add --help
 
 ##	The below 2 lines tells who is modifying code/checkin/checkout
 git config --global user.name "kn255002"
@@ -14,72 +13,66 @@ git config --global --replace http.sslverify false
 git config --list
 
 
-##	Asking help on git command.
-
-git add --help
+##	Assumption:	Over the web github.com you already created repository "AI-Engineering". Now you want to link with Local-FS directory.
+##	Following command to execute on Local-FS.
 
 $ mkdir AI-Engineering
-##git init C:/path/AI-Engineering/	###	Assume repo doesn't exist over web and you want to tract/push to web.	
-##rm -rf .git ### This will stop synch loca with your web repo.
-$ cd AI-Engineering/
-##	You are in working area
-
+$ cd AI-Engineering
 $ mkdir semester-1
 $ mkdir semester-2
 
-##	Create file in /Documents/GitHub/AI-Engineering/semester-2/
- touch afile.txt
+git init .		#This folder will be initialized by creating a hidden directory ".git".
+##rm -rf .git 		#If you remove this hidden directory then Repository Synch will be stopped.
+
+
+##	You may copy/modify following 1,2 Lines from the web repository to set the configuration on Local-FS.
+git remote add origin https://github.com/kn255002/AI-Engineering.git
+
+##	Switch to suitable branch as per web repository settings (default branch="master").
+##	Check available branches
+git branch -v
+
+##	Switch to suiable branch.
+git branch -M main #or# git checkout master #or# git checkout main
+
+##	You are in working area and create/modify/add folders or files.
  
 ##	You are in Staging Area
 ##git add .					##Include everything in this dir/place
-git add --all				##Include everything
+git add --all	##Include everything, 
 git add thisfileonly.txt	##Include single file
 git reset thisfileonly.txt	##Exclude this single file
 git commit -m "Files are uploading to git-web."	##Commit staging, you get hashnumber
 git log					##hashnumber generated: 9975b2e2b59d0d07cefeb60a9f277e485dd439d8 (HEAD -> main)
 ##	You were in Staging Area
-git remote -v				##It tells about online/web path
+git config --list	#Make sure configuration/paramters are correct.
 
-##	Now you shift Staging to repository.
-##	You may copy following 2-Lines from GitHub Web.
-git remote add origin https://github.com/kn255002/AI-Engineering.git
-git branch -M main
-##Push data
+git remote -v		#Make sure, web configuration are correct to PUSH/PULL data from the web.
+##	Now you are ready to shift Staging data to Upload over the web repository.
+git push -u origin main		#You mentioned which branch to use (main/master/any speical) while pushing data over the web.
 ##git push
-##git push -u origin main
 ##git push -u origin --all
 
 git status
-###############
-################### 1st-Time, Copying Remote/Web Repository on Your Disk Local-FS.###############
+
+
+####################################################################################
+#Assume Web Respository already existing.
+#You are 1st-Time, Copying Remote/Web Repository on Your Disk Local-FS
+####################################################################################
 mkdir AI-Engineering
 cd AI-Engineering
 ##	Now in this directory download/clone web repository.
-#git clone webpath /localFS    
+#git clone webpath /localFS  
 git clone https://github.com/kn255002/AI-Engineering . 
 
 ################### Pull Repository on Your local-FS in existing directory###############
-##	You check hidden directory (.git) MUST be existing here.
+##	You check hidden directory (.git) MUST be existing in this folder prior to pull command.
 pwd
 /c/Users/kn255002/Documents/GitHub/AI-Engineering
 ls -al
 drwxr-xr-x 1 kn255002 1049089 0 Dec 24 13:37 .git/
-drwxr-xr-x 1 kn255002 1049089 0 Dec 24 09:45 semester-1/
-drwxr-xr-x 1 kn255002 1049089 0 Dec 24 13:37 semester-2/
 
 ##Execute below command its successfully downloaded data from web to existing git directory
 
 #git pull
-
-remote: Enumerating objects: 11, done.
-remote: Counting objects: 100% (11/11), done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 8 (delta 4), reused 8 (delta 4), pack-reused 0
-Unpacking objects: 100% (8/8), 842 bytes | 15.00 KiB/s, done.
-From https://github.com/kn255002/AI-Engineering
-   031084f..ff85e3e  main       -> origin/main
-Updating 031084f..ff85e3e
-Fast-forward
- semester-2/Basic_GITHUB_commands.txt | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
-
